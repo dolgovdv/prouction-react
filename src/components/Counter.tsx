@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Counter.scss'
+import classes from './Counter.module.scss'
 
 export const MyComponent = () => {
     const [state, setState] = useState(0);
@@ -8,7 +8,7 @@ export const MyComponent = () => {
     }
     return (
         <div>
-            <h1 className="increment">{state}</h1>
+            <h1 className={classes.increment}>{state}</h1>
             <button  onClick={increment}>increment {state}</button>
         </div>
     );

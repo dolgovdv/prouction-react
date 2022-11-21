@@ -13,9 +13,18 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.s[ac]ss$/i,
         use: [
             // Creates `style` nodes from JS strings
-            options.isDev? "style-loader" : MiniCssExtractPlugin.loader,
+            options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
             // Translates CSS into CommonJS
-            "css-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        auto: (resPath: string) => Boolean(resPath.includes('.module.')),
+                        localIdentName: options.isDev ? '[path][name]__[local]--[hash:base64:3]' : "[hash:base64:5]"
+                    },
+
+                }
+            },
             // Compiles Sass to CSS
             "sass-loader",
         ],

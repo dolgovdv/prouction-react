@@ -1,13 +1,26 @@
 import React, {Suspense} from 'react';
-import {Route, Routes} from "react-router-dom";
-import {routeConfig} from "shared/config/routeConfig/routeConfig";
+import {Route, RouteProps, Routes} from "react-router-dom";
+import {AppRoutes} from "shared/config/routeConfig/appRoutes";
+import MainPage from "pages/MainPage/ui/MainPage";
+import {AboutPage} from "pages/AboutPage";
 
-type Props = {};
-export const AppRouter = (props: Props) => {
+
+export const routeConfig: RouteProps[] = [
+    {
+        path: AppRoutes.MAIN,
+        element: <MainPage/>
+    },
+    {
+        path: AppRoutes.ABOUT,
+        element: <AboutPage/>
+    }
+]
+
+export const AppRouter = () => {
     return (
         <Suspense fallback={<div>Загрузка...</div>}>
             <Routes>
-                {Object.values(routeConfig).map(({path, element}) => {
+                {routeConfig.map(({path, element}) => {
                         return <Route key={path} path={path} element={element}/>
                     }
                 )}

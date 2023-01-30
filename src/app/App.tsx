@@ -6,12 +6,11 @@ import {Navbar} from "widgets/Navbar";
 
 
 const MyComponent = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme,])}>
             <Navbar/>
-            <button type={"button"} onClick={toggleTheme}>Theme</button>
             <AppRouter/>
         </div>
     );

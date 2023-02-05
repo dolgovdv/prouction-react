@@ -24,8 +24,17 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const typeScryptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: /node_modules/,
+        use: 'ts-loader',
+        // ReactRefreshWebpackPlugin
+        // use: [
+        //     {
+        //         loader: require.resolve('babel-loader'),
+        //         options: {
+        //             plugins: [__IS_DEV__ && require.resolve('react-refresh/babel')].filter(Boolean),
+        //         },
+        //     },
+        // ],
     }
 
     const cssLoaders = {

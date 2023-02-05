@@ -9,3 +9,12 @@
     background: none;
     outline: none;
 }
+
+.secondary {
+    padding: 0;
+    border: 2px solid var(--bg-color-primary);
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    color: var(--color-secondary);
+}

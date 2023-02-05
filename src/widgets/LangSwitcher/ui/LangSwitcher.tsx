@@ -19,7 +19,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({className}) => {
         <Button type={"button"}
                 onClick={translate}
                 className={classNames(cls.langswitcher, {}, [className])}
-                theme={ThemeButtons.CLEAR}>
+                theme={ThemeButtons.SECONDARY}>
             {t('язык')}
         </Button>
     );

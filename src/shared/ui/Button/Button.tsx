@@ -3,7 +3,8 @@ import cls from './Button.module.scss'
 import {ButtonHTMLAttributes, FC} from "react";
 
 export enum ThemeButtons {
-    CLEAR = 'clear'
+    CLEAR = 'clear',
+    SECONDARY='secondary'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

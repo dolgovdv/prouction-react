@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const arrPlugins = [
         new HTMLWebpackPlugin({
             template: paths.html
         }),
@@ -17,7 +17,12 @@ export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPlugi
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev)
         }),
-        isDev && new ReactRefreshWebpackPlugin(),
-        isDev && new webpack.HotModuleReplacementPlugin(),
     ]
+    if (isDev) {
+        arrPlugins.push(new ReactRefreshWebpackPlugin())
+        arrPlugins.push(new webpack.HotModuleReplacementPlugin())
+    }
+
+
+    return arrPlugins
 }

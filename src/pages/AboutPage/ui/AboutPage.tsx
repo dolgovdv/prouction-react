@@ -1,16 +1,11 @@
-import React from 'react';
-import {useTranslation} from "react-i18next";
+import { useTranslation } from 'react-i18next'
+import { type FC } from 'react'
 
-type Props = {
-    
-};
-export const AboutPage = (props: Props) => {
-    const {t} = useTranslation(['about']);
-    return (
+export const AboutPage: FC = () => {
+  const { t } = useTranslation(['about'])
+  return (
         <div>
             {t('О приложении')}
         </div>
-    );
-};
-
-
+  )
+}

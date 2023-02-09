@@ -1,4 +1,4 @@
 export enum AppRoutes {
-    MAIN = '/',
-    ABOUT = '/about'
+  MAIN = '/',
+  ABOUT = '/about'
 }

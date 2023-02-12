@@ -2,19 +2,12 @@
     width: var(--sidebar-width);
     height: calc(100vh - var(--navbar-height));
     background: var(--bg-color-secondary);
-
     position: relative;
-    //transition: width 0.3s;
+
+    /**
+    transition: width 0.3s;
+     */
     transition: all 0.3s ease-out;
-}
-
-.collapsed {
-    //width: var(--sidebar-width-collapsed);
-    transform: translateX(-23rem);
-
-    .switcher {
-        justify-content: right;
-    }
 }
 
 .switcher {
@@ -23,6 +16,16 @@
     bottom: 1rem;
     display: flex;
     justify-content: center;
+}
+
+.collapsed {
+    /**
+    width: var(--sidebar-width-collapsed);     */
+    transform: translateX(-23rem);
+
+    .switcher {
+        justify-content: right;
+    }
 }
 
 .lang {

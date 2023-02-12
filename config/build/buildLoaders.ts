@@ -53,7 +53,7 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
     //     {
     //         loader: require.resolve('babel-loader'),
     //         options: {
-    //             plugins: [_IS_DEV_ && require.resolve('react-refresh/babel')].filter(Boolean),
+    //             plugins: [__IS_DEV__ && require.resolve('react-refresh/babel')].filter(Boolean),
     //         },
     //     },
     // ],

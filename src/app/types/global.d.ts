@@ -14,4 +14,4 @@ declare module '*.svg' {
   export default ReactComponent
 }
 
-declare const _IS_DEV_: boolean
+declare const __IS_DEV__: boolean

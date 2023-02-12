@@ -8,9 +8,12 @@ module.exports = {
         'standard-with-typescript',
         'plugin:react/jsx-runtime'
     ],
-    overrides: [
-    ],
+    overrides: [],
+    // parser: '@typescript-eslint/parser',
     parserOptions: {
+        ecmaFeatures: {
+            jsx: true
+        },
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: ['./tsconfig.json']
@@ -25,11 +28,21 @@ module.exports = {
     },
     rules: {
         indent: 'off',
+        '@typescript-eslint/naming-convention': ['off'],
         '@typescript-eslint/indent': 'warn',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-var-requires': 'off'
     },
     globals: {
-        _IS_DEV_: true
+        __IS_DEV__: true
     }
 }
+
+// '@typescript-eslint/naming-convention': 'warn',
+// "error",
+// {
+//     leadingUnderscore:true,
+//     trailingUnderscore: true,
+//     allowDouble: true
+// },
+// ],

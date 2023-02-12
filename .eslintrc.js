@@ -19,7 +19,8 @@ module.exports = {
         project: ['./tsconfig.json']
     },
     plugins: [
-        'react'
+        'react',
+        'i18next'
     ],
     settings: {
         react: {
@@ -31,7 +32,8 @@ module.exports = {
         '@typescript-eslint/naming-convention': ['off'],
         '@typescript-eslint/indent': 'warn',
         'react/react-in-jsx-scope': 'off',
-        '@typescript-eslint/no-var-requires': 'off'
+        '@typescript-eslint/no-var-requires': 'off',
+        'i18next/no-literal-string': ['error', { markupOnly: true }]
     },
     globals: {
         __IS_DEV__: true

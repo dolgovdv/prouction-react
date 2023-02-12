@@ -5,7 +5,10 @@ export function buildDevServer (options: BuildOptions): DevServerConfiguration {
   return {
     port: options.port,
     open: true,
-    historyApiFallback: true,
-    hot: true
+    historyApiFallback: true
+    /**
+     * [webpack-dev-server] "hot: true" automatically applies HMR plugin, you don't have to add it manually to your webpack configuration.
+     */
+    // hot: true
   }
 }

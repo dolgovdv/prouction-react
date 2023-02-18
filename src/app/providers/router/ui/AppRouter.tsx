@@ -4,7 +4,7 @@ import { AppRoutes } from 'shared/config/routeConfig/appRoutes'
 import MainPage from 'pages/MainPage/ui/MainPage'
 import { AboutPage } from 'pages/AboutPage'
 import { NotFoundPage } from 'pages/NotFoundPage'
-import { t } from 'i18next'
+import { PageLoader } from 'shared/ui/PageLoader/PageLoader'
 
 export const routeConfig: RouteProps[] = [
   {
@@ -23,7 +23,6 @@ export const routeConfig: RouteProps[] = [
 
 export const AppRouter: FC = () => {
   return (
-        <Suspense fallback={<div>{t('Загрузка')}</div>}>
             <Routes>
                 {routeConfig.map(({ path, element }) => {
                   return (
@@ -31,15 +30,16 @@ export const AppRouter: FC = () => {
                                 key={path}
                                 path={path}
                                 element={(
-                                    <div className="page-wrapper">
+                                    <Suspense fallback={<PageLoader/>}>
+                                      <div className="page-wrapper">
                                         {element}
-                                    </div>
+                                      </div>
+                                    </Suspense>
                                 )}
                             />
                   )
                 }
                 )}
             </Routes>
-        </Suspense>
   )
 }

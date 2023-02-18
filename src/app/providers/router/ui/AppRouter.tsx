@@ -3,6 +3,8 @@ import { Route, type RouteProps, Routes } from 'react-router-dom'
 import { AppRoutes } from 'shared/config/routeConfig/appRoutes'
 import MainPage from 'pages/MainPage/ui/MainPage'
 import { AboutPage } from 'pages/AboutPage'
+import { NotFoundPage } from 'pages/NotFoundPage'
+import { t } from 'i18next'
 
 export const routeConfig: RouteProps[] = [
   {
@@ -12,12 +14,16 @@ export const routeConfig: RouteProps[] = [
   {
     path: AppRoutes.ABOUT,
     element: <AboutPage/>
+  },
+  {
+    path: AppRoutes.NOT_FOUND,
+    element: <NotFoundPage/>
   }
 ]
 
 export const AppRouter: FC = () => {
   return (
-        <Suspense fallback={<div>Загрузка...</div>}>
+        <Suspense fallback={<div>{t('Загрузка')}</div>}>
             <Routes>
                 {routeConfig.map(({ path, element }) => {
                   return (

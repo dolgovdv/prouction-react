@@ -3,13 +3,14 @@ import cls from './Sidebar.module.scss'
 import { type FC, useState } from 'react'
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher'
 import { LangSwitcher } from 'widgets/LangSwitcher'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 interface SidebarProps {
   className?: string
 }
 
 export const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
+  const { t } = useTranslation()
   const [collapsed, setCollapsed] = useState<boolean>(false)
   const onToggle = (): void => {
     setCollapsed(prevState => !prevState)

@@ -8,7 +8,6 @@ module.exports = {
         'standard-with-typescript',
         'plugin:react/jsx-runtime'
     ],
-    overrides: [],
     // parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -20,7 +19,8 @@ module.exports = {
     },
     plugins: [
         'react',
-        'i18next'
+        'i18next',
+        '@typescript-eslint'
     ],
     settings: {
         react: {
@@ -37,7 +37,14 @@ module.exports = {
     },
     globals: {
         __IS_DEV__: true
-    }
+    },
+    root: true,
+    overrides: [{
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+            'i18next/no-literal-string': 'off'
+        }
+    }]
 }
 
 // '@typescript-eslint/naming-convention': 'warn',

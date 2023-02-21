@@ -20,4 +20,9 @@
       "module": "CommonJS"
     }
   },
+  "include": [
+    "./src/**/*",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
+  ]
 }

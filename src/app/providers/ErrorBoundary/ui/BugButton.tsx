@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next'
  * @constructor
  */
 export const BugButton: FC = () => {
-  const { t } = useTranslation()
+  const { t } = useTranslation('error')
   const [error, setError] = useState<boolean>(false)
   const onThrow = (): void => { setError(true) }
 

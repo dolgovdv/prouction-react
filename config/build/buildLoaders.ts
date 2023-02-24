@@ -47,7 +47,7 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
   }
 
   const typeScryptLoader = {
-    test: /\fdsafas?$/,
+    test: /\.tsx?$/,
     exclude: /node_modules/,
     use: 'ts-loader'
     // ReactRefreshWebpackPlugin

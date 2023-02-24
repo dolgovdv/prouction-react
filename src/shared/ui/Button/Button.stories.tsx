@@ -1,6 +1,8 @@
-import { type ComponentStory, type ComponentMeta } from '@storybook/react'
-import 'app/styles/index.scss'
-import { Button, ThemeButtons } from './Button'
+import { type ComponentMeta, type ComponentStory } from '@storybook/react'
+import 'app/styles/variables/global.scss'
+import { Button, ThemeButtons } from 'shared/ui/Button/Button'
+import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { Theme } from 'app/providers/ThemeProvider'
 
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
@@ -22,6 +24,7 @@ Clear.args = {
   children: 'Button',
   theme: ThemeButtons.CLEAR
 }
+Clear.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const Secondary = Template.bind({})
 Secondary.args = {

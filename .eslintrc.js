@@ -3,11 +3,7 @@ module.exports = {
         browser: true,
         es2021: true
     },
-    extends: [
-        'plugin:react/recommended',
-        'standard-with-typescript',
-        'plugin:react/jsx-runtime'
-    ],
+    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:react/jsx-runtime', 'plugin:storybook/recommended'],
     // parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
@@ -17,11 +13,7 @@ module.exports = {
         sourceType: 'module',
         project: ['./tsconfig.json']
     },
-    plugins: [
-        'react',
-        'i18next',
-        '@typescript-eslint'
-    ],
+    plugins: ['react', 'i18next', '@typescript-eslint'],
     settings: {
         react: {
             version: 'detect'
@@ -33,7 +25,10 @@ module.exports = {
         '@typescript-eslint/indent': 'warn',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-var-requires': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['to'] }]
+        'i18next/no-literal-string': ['error', {
+            markupOnly: true,
+            ignoreAttribute: ['to']
+        }]
     },
     globals: {
         __IS_DEV__: true

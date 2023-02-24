@@ -20,9 +20,12 @@
       "module": "CommonJS"
     }
   },
+  "strictBindCallApply": true,
   "include": [
     "./src/**/*",
     "./config/**/*.ts",
     "./config/**/*.tsx",
+    "./eslintrc.js",
+    "./webpack.config.ts"
   ]
 }

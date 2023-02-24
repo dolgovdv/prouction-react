@@ -12,7 +12,6 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
       options: {
         presets: ['@babel/preset-env'],
         plugins: [
-          // TODO: добавить вынос с учетом namespace
           ['i18next-extract',
             {
               locales: ['ru', 'en'],
@@ -48,7 +47,7 @@ export function buildLoaders (options: BuildOptions): webpack.RuleSetRule[] {
   }
 
   const typeScryptLoader = {
-    test: /\fdsafas?$/,
+    test: /\.tsx?$/,
     exclude: /node_modules/,
     use: 'ts-loader'
     // ReactRefreshWebpackPlugin

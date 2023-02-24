@@ -24,5 +24,7 @@
     "./src/**/*",
     "./config/**/*.ts",
     "./config/**/*.tsx",
+    "./eslintrc.js",
+    "./webpack.config.ts"
   ]
 }

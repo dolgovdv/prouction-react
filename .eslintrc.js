@@ -1,45 +1,57 @@
 module.exports = {
     env: {
         browser: true,
-        es2021: true
+        es2021: true,
     },
-    extends: ['plugin:react/recommended', 'standard-with-typescript', 'plugin:react/jsx-runtime', 'plugin:storybook/recommended'],
+    extends: [
+        'plugin:react/recommended',
+        'standard-with-typescript',
+        'plugin:react/jsx-runtime',
+        'plugin:storybook/recommended',
+        'prettier',
+    ],
     // parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaFeatures: {
-            jsx: true
+            jsx: true,
         },
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json']
+        project: ['./tsconfig.json'],
     },
-    plugins: ['react', 'i18next', '@typescript-eslint'],
+    plugins: ['react', 'i18next', '@typescript-eslint', 'prettier'],
     settings: {
         react: {
-            version: 'detect'
-        }
+            version: 'detect',
+        },
     },
     rules: {
+        'prettier/prettier': 'error',
         indent: 'off',
+        '@typescript-eslint/indent': ['warn', 4],
         '@typescript-eslint/naming-convention': ['off'],
-        '@typescript-eslint/indent': 'warn',
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-var-requires': 'off',
-        'i18next/no-literal-string': ['error', {
-            markupOnly: true,
-            ignoreAttribute: ['to']
-        }]
+        'i18next/no-literal-string': [
+            'error',
+            {
+                markupOnly: true,
+                ignoreAttribute: ['to'],
+            },
+        ],
     },
     globals: {
-        __IS_DEV__: true
+        __IS_DEV__: true,
     },
     root: true,
-    overrides: [{
-        files: ['**/src/**/*.test.{ts,tsx}'],
-        rules: {
-            'i18next/no-literal-string': 'off'
-        }
-    }]
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 }
 
 // '@typescript-eslint/naming-convention': 'warn',

@@ -14,6 +14,7 @@
     "test:unit": "npx jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
     "test:ui:approve": "npx loki approve",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook"
   },
@@ -51,10 +52,12 @@
     "babel-plugin-i18next-extract": "^0.8.3",
     "css-loader": "^6.6.0",
     "eslint": "^8.33.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^34.0.0",
     "eslint-plugin-i18next": "^5.1.2",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-storybook": "^0.6.11",
@@ -64,6 +67,7 @@
     "jest": "^27.5.1",
     "loki": "^0.31.0",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "2.8.4",
     "react-refresh": "^0.12.0",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",
@@ -92,14 +96,14 @@
   "loki": {
     "configurations": {
       "chrome.laptop": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "width": 1366,
         "height": 768,
         "deviceScaleFactor": 1,
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
       }
     }

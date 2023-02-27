@@ -36,7 +36,7 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['to'],
+                ignoreAttribute: ['to', 'data-testid', 'size'],
             },
         ],
     },

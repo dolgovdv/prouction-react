@@ -34,7 +34,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
             </Button>
             <div className={cls.switcher}>
                 <ThemeSwitcher />
-                <LangSwitcher className={cls.lang} />
+                <LangSwitcher className={cls.lang} shortsName={collapsed} />
             </div>
         </div>
     )

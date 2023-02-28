@@ -28,7 +28,7 @@ module.exports = {
     rules: {
         'prettier/prettier': 'error',
         indent: 'off',
-        '@typescript-eslint/indent': ['warn', 4],
+        '@typescript-eslint/indent': ['off', 4],
         '@typescript-eslint/naming-convention': ['off'],
         'react/react-in-jsx-scope': 'off',
         '@typescript-eslint/no-var-requires': 'off',

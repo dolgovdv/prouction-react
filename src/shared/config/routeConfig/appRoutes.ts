@@ -1,7 +1,7 @@
 export enum AppRoutes {
-  MAIN = '/',
-  ABOUT = '/about',
+    MAIN = '/',
+    ABOUT = '/about',
 
-  // если никакой маршрут не отработал
-  NOT_FOUND = '*',
+    // если никакой маршрут не отработал
+    NOT_FOUND = '*',
 }

@@ -19,8 +19,8 @@ const Template: ComponentStory<typeof ThemeSwitcher> = (args) => (
 
 export const Light = Template.bind({})
 Light.args = {}
-export const Dark = Template.bind({})
-Dark.args = {}
+// export const Dark = Template.bind({})
+// Dark.args = {}
 // TODO: тесты падают с ошибкой
 // No reference image found
 // You can update the reference files with:

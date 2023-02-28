@@ -24,7 +24,7 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({
             className={classNames('', {}, [className])}
             theme={ButtonTheme.SECONDARY}
         >
-            {t(shortsName ? 'короткое-название' : 'язык')}
+            {t('язык')}
         </Button>
     )
 }

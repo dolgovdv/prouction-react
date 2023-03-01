@@ -2,6 +2,7 @@ import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import type React from 'react'
 import {useRef, useState, type FC, useEffect, useCallback} from 'react'
+import {Portal} from 'shared/ui/Portal/Portal'
 
 interface ModalProps {
     className?: string
@@ -47,16 +48,18 @@ export const Modal: FC<ModalProps> = ({className = '', isOpen = false, onClose, 
     }
 
     return (
-        <div
-            className={classNames(cls.modal, {[cls.opened]: isOpen, [cls.closed]: isClosing}, [
-                className,
-            ])}
-        >
-            <div className={cls.overlay} onClick={closeHandler}>
-                <div className={cls.content} onClick={onContentClick}>
-                    {children}
+        <Portal>
+            <div
+                className={classNames(cls.modal, {[cls.opened]: isOpen, [cls.closed]: isClosing}, [
+                    className,
+                ])}
+            >
+                <div className={cls.overlay} onClick={closeHandler}>
+                    <div className={cls.content} onClick={onContentClick}>
+                        {children}
+                    </div>
                 </div>
             </div>
-        </div>
+        </Portal>
     )
 }

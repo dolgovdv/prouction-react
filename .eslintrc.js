@@ -19,7 +19,7 @@ module.exports = {
         sourceType: 'module',
         project: ['./tsconfig.json'],
     },
-    plugins: ['react', 'i18next', '@typescript-eslint', 'prettier'],
+    plugins: ['react', 'i18next', '@typescript-eslint', 'prettier', 'react-hooks'],
     settings: {
         react: {
             version: 'detect',
@@ -39,6 +39,8 @@ module.exports = {
                 ignoreAttribute: ['to', 'data-testid', 'size'],
             },
         ],
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
     },
     globals: {
         __IS_DEV__: true,

@@ -4,11 +4,7 @@ import {type BuildPaths} from '../build/types/config'
 import {buildCssLoader} from '../build/loaders/buildCssLoader'
 import {type RuleSetRule} from 'webpack'
 
-export default ({
-    config,
-}: {
-    config: webpack.Configuration
-}): webpack.Configuration => {
+export default ({config}: {config: webpack.Configuration}): webpack.Configuration => {
     const paths: BuildPaths = {
         build: '',
         html: '',

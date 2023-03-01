@@ -22,9 +22,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
     return (
         <div
             data-testid='sidebar'
-            className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [
-                className,
-            ])}
+            className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [className])}
         >
             <div className={cls.items}>
                 <AppLink to={'/'} className={cls.item}>
@@ -32,11 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
                     <span className={cls.link}>{t('Main')}</span>
                 </AppLink>
 
-                <AppLink
-                    to={'/about'}
-                    theme={AppLinkTheme.SECONDARY}
-                    className={cls.item}
-                >
+                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY} className={cls.item}>
                     <AboutIcon className={cls.icon} />
                     <span className={cls.link}>{t('About')}</span>
                 </AppLink>

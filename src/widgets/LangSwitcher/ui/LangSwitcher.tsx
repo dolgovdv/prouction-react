@@ -9,10 +9,7 @@ interface LangSwitcherProps {
     shortsName?: boolean
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({
-    className = '',
-    shortsName = false,
-}) => {
+export const LangSwitcher: FC<LangSwitcherProps> = ({className = '', shortsName = false}) => {
     const {t} = useTranslation()
     const translate = (): void => {
         void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')

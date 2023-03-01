@@ -6,9 +6,9 @@ import {Navbar} from 'widgets/Navbar'
 import {Sidebar} from 'widgets/Sidebar'
 import {type FC, Suspense} from 'react'
 
-const App: FC = () => {
+export const App: FC = () => {
+    // const {t} = useTranslation()
     const {theme = Theme.LIGHT} = useTheme()
-
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback={''}>

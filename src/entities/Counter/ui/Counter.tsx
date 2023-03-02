@@ -17,13 +17,13 @@ export const Counter: FC = () => {
     }
     return (
         <div>
-            <h1>
+            <h1 data-testid={'value-title'}>
                 {t('value')} ={counterValue}
             </h1>
-            <Button onClick={increment} theme={ButtonTheme.SECONDARY}>
+            <Button data-testid={'increment-btn'} onClick={increment} theme={ButtonTheme.SECONDARY}>
                 {t('increment')}
             </Button>
-            <Button onClick={decrement} theme={ButtonTheme.SECONDARY}>
+            <Button data-testid={'decrement-btn'} onClick={decrement} theme={ButtonTheme.SECONDARY}>
                 {t('decrement')}
             </Button>
         </div>

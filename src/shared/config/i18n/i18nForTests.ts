@@ -12,7 +12,7 @@ void i18n
         interpolation: {
             escapeValue: false, // not needed for react!!
         },
-        resources: {ru: {translations: {}}},
+        resources: {ru: {translations: {}}, en: {translations: {}}},
     })
 
 export default i18n

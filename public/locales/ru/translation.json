@@ -1,7 +1,11 @@
 {
     "About": "About",
     "Main": "Main",
+    "decrement": "decrement",
+    "increment": "increment",
+    "isAuthModal": "isAuthModal",
     "toggle-modal": "toggle-modal",
+    "value": "value",
     "Войти": "Войти",
     "Главная": "Главная",
     "О приложении": "О приложении",

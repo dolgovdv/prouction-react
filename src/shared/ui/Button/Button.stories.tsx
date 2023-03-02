@@ -44,3 +44,16 @@ SquareLDark.args = {
     square: true,
 }
 SquareLDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const OutlineSecondaryLight = Template.bind({})
+OutlineSecondaryLight.args = {
+    children: 'Button',
+    theme: ButtonTheme.OUTLINE_SECONDARY,
+}
+
+export const OutlineSecondaryDark = Template.bind({})
+OutlineSecondaryDark.args = {
+    children: 'Button',
+    theme: ButtonTheme.OUTLINE_SECONDARY,
+}
+OutlineSecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]

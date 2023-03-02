@@ -20,7 +20,7 @@ export const Navbar: FC<NavbarProps> = ({className = ''}) => {
     }, [])
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
-            <Button theme={ButtonTheme.CLEAR} className={cls.links} onClick={onToggleModal}>
+            <Button theme={ButtonTheme.SECONDARY} className={cls.links} onClick={onToggleModal}>
                 {t('Войти')}
             </Button>
             <Modal isOpen={isAuthModal} onClose={onToggleModal}>

@@ -20,7 +20,7 @@ export const BugButton: FC = () => {
     }, [error])
 
     return (
-        <Button type={'button'} onClick={onThrow} theme={ButtonTheme.SECONDARY}>
+        <Button type={'button'} onClick={onThrow} theme={ButtonTheme.OUTLINE_SECONDARY}>
             {t('error:Тест1')}
         </Button>
     )

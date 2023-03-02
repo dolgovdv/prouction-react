@@ -5,6 +5,7 @@ import {type ButtonHTMLAttributes, type FC} from 'react'
 export enum ButtonTheme {
     CLEAR = 'clear',
     SECONDARY = 'secondary',
+    OUTLINE_SECONDARY = 'outline-secondary',
     BACKGROUND = 'background',
     BACKGROUND_SECONDARY = 'background-secondary',
 }

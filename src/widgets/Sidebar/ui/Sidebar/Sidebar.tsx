@@ -30,7 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
                     <span className={cls.link}>{t('Main')}</span>
                 </AppLink>
 
-                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY} className={cls.item}>
+                <AppLink to={'/about'} theme={AppLinkTheme.OUTLINE_SECONDARY} className={cls.item}>
                     <AboutIcon className={cls.icon} />
                     <span className={cls.link}>{t('About')}</span>
                 </AppLink>
@@ -38,7 +38,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
                 {/* <div className={cls.item}> */}
                 {/*    <AboutIcon className={cls.icon} /> */}
                 {/*    <AppLink */}
-                {/*        theme={AppLinkTheme.SECONDARY} */}
+                {/*        theme={AppLinkTheme.OUTLINE_SECONDARY} */}
                 {/*        to={'/about'} */}
                 {/*        className={cls.link} */}
                 {/*    > */}

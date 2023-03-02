@@ -12,6 +12,12 @@
 }
 
 .secondary {
+    border: none;
+    background: none;
+    color: var(--color-secondary);
+}
+
+.outline-secondary {
     border: 2px solid var(--color-secondary);
     background: none;
     outline: none;

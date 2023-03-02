@@ -25,8 +25,8 @@ PRIMARY.args = {
 }
 PRIMARY.decorators = [ThemeDecorator(Theme.DARK)]
 
-export const SECONDARY = Template.bind({})
-SECONDARY.args = {
+export const OUTLINE_SECONDARY = Template.bind({})
+OUTLINE_SECONDARY.args = {
     children: 'Button',
-    theme: AppLinkTheme.SECONDARY,
+    theme: AppLinkTheme.OUTLINE_SECONDARY,
 }

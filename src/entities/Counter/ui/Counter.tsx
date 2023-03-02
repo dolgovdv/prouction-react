@@ -20,10 +20,18 @@ export const Counter: FC = () => {
             <h1 data-testid={'value-title'}>
                 {t('value')} ={counterValue}
             </h1>
-            <Button data-testid={'increment-btn'} onClick={increment} theme={ButtonTheme.SECONDARY}>
+            <Button
+                data-testid={'increment-btn'}
+                onClick={increment}
+                theme={ButtonTheme.OUTLINE_SECONDARY}
+            >
                 {t('increment')}
             </Button>
-            <Button data-testid={'decrement-btn'} onClick={decrement} theme={ButtonTheme.SECONDARY}>
+            <Button
+                data-testid={'decrement-btn'}
+                onClick={decrement}
+                theme={ButtonTheme.OUTLINE_SECONDARY}
+            >
                 {t('decrement')}
             </Button>
         </div>

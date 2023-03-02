@@ -1,8 +1,10 @@
 :root,
-.app.light {
-    --bg-color-primary: #c8f0ff;
-    --bg-color-secondary: #1d235b;
-    --color-primary: #003c9f;
-    --color-secondary: #a7c5ff;
-    --overlay-background-color: rgb(241 206 255 / 25%);
+.app_light_theme {
+    --bg-color-primary: #d8dee9;
+    --bg-color-secondary: #88c0d0;
+    --color-primary: #5e81ac;
+    --color-secondary: #4c566a;
+    --overlay-background-color: rgb(0 0 0 / 25%);
+
+    transition: all 0.3s ease-out;
 }

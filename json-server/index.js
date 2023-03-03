@@ -6,6 +6,9 @@ const path = require('path')
 const server = jsonServer.create()
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'))
 
+server.use(jsonServer.defaults({}))
+server.use(jsonServer.bodyParser)
+
 //  задержка сервера
 server.use(async (req, res, next) => {
     // eslint-disable-next-line promise/param-names
@@ -23,23 +26,28 @@ server.use((req, res, next) => {
     next()
 })
 
-server.use(jsonServer.defaults())
 server.use(router)
 
 // енд поинт для логина
-
 server.post('/login', (req, res) => {
-    const {username, password} = req.body
-    const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
-    const {user} = db
+    try {
+        const {username, password} = req.body
+        const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'))
+        const {users = []} = db
 
-    const userFromBd = user.find((user) => user.username === username && user.password === password)
+        const userFromBd = users.find(
+            (user) => user.username === username && user.password === password
+        )
 
-    if (userFromBd) {
-        return res.json(userFromBd)
+        if (userFromBd) {
+            return res.json(userFromBd)
+        }
+
+        return res.status(403).json({message: 'User not found'})
+    } catch (e) {
+        console.log(e)
+        return res.status(500).json({message: e.message})
     }
-
-    return res.status(403).json({message: 'AUTH ERROR'})
 })
 
 // запуск сервера

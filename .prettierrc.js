@@ -8,4 +8,5 @@ module.exports = {
     jsxSingleQuote: true,
     bracketSpacing: false,
     printWidth: 100,
+    endOfLine: 'auto',
 }

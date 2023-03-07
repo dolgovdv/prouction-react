@@ -69,9 +69,11 @@
     "eslint-plugin-storybook": "^0.6.11",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "json-server": "^0.17.0",
+    "lint-staged": "^13.0.3",
     "loki": "^0.31.0",
     "mini-css-extract-plugin": "^2.5.3",
     "prettier": "2.8.4",
@@ -90,8 +92,7 @@
     "webpack": "^5.74.0",
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.7.4",
-    "husky": "^7.0.0"
+    "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.0",
@@ -118,5 +119,6 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "lint-staged": {"**/*.{ts,tsx}":"eslint"}
 }

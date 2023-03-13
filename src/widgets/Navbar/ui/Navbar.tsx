@@ -5,6 +5,8 @@ import {type FC, useCallback, useState} from 'react'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {LoginModal} from 'features/AuthByUsername'
+import {useDispatch, useSelector} from 'react-redux'
+import {getUserAuthData, userActions} from 'entities/User'
 
 // import {useTranslation} from 'react-i18next'
 
@@ -14,6 +16,8 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = ({className = ''}) => {
     const {t} = useTranslation()
+    const dispatch = useDispatch()
+    const DebugValue = useSelector(getUserAuthData)
     const [isAuthModal, isSetAuthModal] = useState<boolean>(false)
     const onCloseModal = useCallback((): void => {
         isSetAuthModal(false)
@@ -21,6 +25,25 @@ export const Navbar: FC<NavbarProps> = ({className = ''}) => {
     const onShowModal = useCallback((): void => {
         isSetAuthModal(true)
     }, [])
+
+    const onLogout = useCallback((): void => {
+        dispatch(userActions.logout())
+    }, [dispatch])
+
+    if (DebugValue != null) {
+        return (
+            <div className={classNames(cls.navbar, {}, [className])}>
+                <Button
+                    theme={ButtonTheme.OUTLINE_SECONDARY}
+                    className={cls.links}
+                    onClick={onLogout}
+                >
+                    {t('Выйти')}
+                </Button>
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} lazy={true} />
+            </div>
+        )
+    }
     return (
         <div className={classNames(cls.navbar, {}, [className])}>
             <Button theme={ButtonTheme.SECONDARY} className={cls.links} onClick={onShowModal}>

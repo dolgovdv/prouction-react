@@ -28,6 +28,13 @@ ThemeDark.args = {
 }
 ThemeDark.decorators = [ThemeDecorator(Theme.DARK)]
 
+export const Disabled = Template.bind({})
+Disabled.args = {
+    children: 'Button',
+    theme: ButtonTheme.CLEAR,
+    disabled: true,
+}
+
 export const SquareL = Template.bind({})
 SquareL.args = {
     children: '>',

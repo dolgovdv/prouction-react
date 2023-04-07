@@ -17,7 +17,7 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({className = ''}) => {
     const {t} = useTranslation()
     const dispatch = useDispatch()
-    const DebugValue = useSelector(getUserAuthData)
+    const authData = useSelector(getUserAuthData)
     const [isAuthModal, isSetAuthModal] = useState<boolean>(false)
     const onCloseModal = useCallback((): void => {
         isSetAuthModal(false)
@@ -30,7 +30,7 @@ export const Navbar: FC<NavbarProps> = ({className = ''}) => {
         dispatch(userActions.logout())
     }, [dispatch])
 
-    if (DebugValue != null) {
+    if (authData != null) {
         return (
             <div className={classNames(cls.navbar, {}, [className])}>
                 <Button

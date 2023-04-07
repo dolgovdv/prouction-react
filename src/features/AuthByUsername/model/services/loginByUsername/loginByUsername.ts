@@ -22,7 +22,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
             thunkAPI.dispatch(userActions.setAuthData(response.data))
             return response.data
         } catch (e) {
-            console.log(e)
             // TODO: автоматическти сохраняемый перевод попадает в неправильную папку
             return thunkAPI.rejectWithValue(i18n.t('Неправильно введен логин или пароль.'))
         }

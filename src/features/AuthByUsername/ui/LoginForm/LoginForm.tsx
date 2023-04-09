@@ -16,7 +16,8 @@ interface LoginFormProps {
 }
 
 export const LoginForm = memo((props: LoginFormProps) => {
-    const {t} = useTranslation()
+    const {t} = useTranslation(['error'])
+
     const {className = ''} = props
     const dispatch = useDispatch()
     const {username, password, error, isLoading} = useSelector(getLoginState)
@@ -36,11 +37,15 @@ export const LoginForm = memo((props: LoginFormProps) => {
     const onLoginClick = useCallback(() => {
         dispatch(loginByUsername({username, password}))
     }, [dispatch, password, username])
-
+    if (error != null) {
+        console.log(error)
+    }
     return (
         <div className={classNames(cls.loginform, {}, [className])}>
             <Text title={t('Форма авторизации')} />
-            {error != null && <Text text={error} theme={TextTheme.ERROR} />}
+            {error != null && (
+                <Text text={t('Неправильно_введен_логин_или_пароль')} theme={TextTheme.ERROR} />
+            )}
 
             <Input
                 type={'text'}

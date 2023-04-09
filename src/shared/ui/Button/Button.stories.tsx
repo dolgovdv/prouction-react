@@ -1,6 +1,6 @@
 import {type ComponentMeta, type ComponentStory} from '@storybook/react'
 import 'app/styles/variables/global.scss'
-import {Button, ButtonTheme} from 'shared/ui/Button/Button'
+import {Button, ButtonTheme} from './Button'
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 

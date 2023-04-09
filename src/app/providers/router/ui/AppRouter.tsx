@@ -1,7 +1,7 @@
 import {type FC, Suspense} from 'react'
 import {Route, type RouteProps, Routes} from 'react-router-dom'
 import {AppRoutes} from 'shared/config/routeConfig/appRoutes'
-import MainPage from 'pages/MainPage/ui/MainPage'
+import {MainPage} from 'pages/MainPage'
 import {AboutPage} from 'pages/AboutPage'
 import {NotFoundPage} from 'pages/NotFoundPage'
 import {PageLoader} from 'shared/ui/PageLoader/PageLoader'

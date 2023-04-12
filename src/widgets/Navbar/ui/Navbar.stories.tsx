@@ -20,7 +20,7 @@ export const Light = Template.bind({})
 Light.args = {}
 Light.decorators = [
     StoreDecorator({
-        loginForm: {username: '123', password: 'asd'},
+        loginForm: {username: '123', password: 'asd', isLoading: false},
     }),
 ]
 export const DARK = Template.bind({})
@@ -28,7 +28,7 @@ DARK.args = {}
 DARK.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({
-        loginForm: {username: '123', password: 'asd'},
+        loginForm: {username: '123', password: 'asd', isLoading: false},
     }),
 ]
 

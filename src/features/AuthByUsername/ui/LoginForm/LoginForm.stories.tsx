@@ -17,7 +17,7 @@ export const Primary = Template.bind({})
 Primary.args = {}
 Primary.decorators = [
     StoreDecorator({
-        loginForm: {username: '123', password: 'asd'},
+        loginForm: {username: '123', password: 'asd', isLoading: false},
     }),
 ]
 
@@ -25,7 +25,7 @@ export const WithError = Template.bind({})
 WithError.args = {}
 WithError.decorators = [
     StoreDecorator({
-        loginForm: {username: '123', password: 'asd', error: 'error'},
+        loginForm: {username: '123', password: 'asd', error: 'error', isLoading: false},
     }),
 ]
 
@@ -33,6 +33,6 @@ export const IsLoading = Template.bind({})
 IsLoading.args = {}
 IsLoading.decorators = [
     StoreDecorator({
-        loginForm: {isLoading: true},
+        loginForm: {username: '123', password: 'asd', isLoading: true},
     }),
 ]

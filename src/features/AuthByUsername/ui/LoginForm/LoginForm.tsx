@@ -5,11 +5,20 @@ import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input'
 import {useDispatch, useSelector} from 'react-redux'
-import {loginActions} from '../../model/slice/loginSlice'
-import {getLoginState} from '../..//model/selectors/getLoginState/getLoginState'
+import {loginActions, loginReducer} from '../../model/slice/loginSlice'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {Text} from 'shared/ui/Text'
 import {TextTheme} from 'shared/ui/Text/ui/Text'
+import {getLoginUsername} from '../../model/selectors/getLoginUsername/getLoginUsername'
+import {getLoginError} from '../../model/selectors/getLoginError/getLoginError'
+import {getLoginPassword} from '../../model/selectors/getLoginPassword/getLoginPassword'
+import {getLoginLoading} from '../../model/selectors/getLoginLoading/getLoginLoading'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader'
+
+const initialReducers: ReducersList = {loginForm: loginReducer}
 
 interface LoginFormProps {
     className?: string
@@ -20,7 +29,11 @@ export const LoginForm = memo((props: LoginFormProps) => {
 
     const {className = ''} = props
     const dispatch = useDispatch()
-    const {username, password, error, isLoading} = useSelector(getLoginState)
+    const username = useSelector(getLoginUsername)
+    const error = useSelector(getLoginError)
+    const password = useSelector(getLoginPassword)
+    const isLoading = useSelector(getLoginLoading)
+
     const onChangeUsername = useCallback(
         (value) => {
             dispatch(loginActions.setUsername(value))
@@ -41,34 +54,36 @@ export const LoginForm = memo((props: LoginFormProps) => {
         console.log(error)
     }
     return (
-        <div className={classNames(cls.loginform, {}, [className])}>
-            <Text title={t('Форма авторизации')} />
-            {error != null && (
-                <Text text={t('Неправильно_введен_логин_или_пароль')} theme={TextTheme.ERROR} />
-            )}
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
+            <div className={classNames(cls.loginform, {}, [className])}>
+                <Text title={t('Форма авторизации')} />
+                {error != null && (
+                    <Text text={t('Неправильно_введен_логин_или_пароль')} theme={TextTheme.ERROR} />
+                )}
 
-            <Input
-                type={'text'}
-                className={classNames(cls.input)}
-                autoFocus={true}
-                onChange={onChangeUsername}
-                value={username}
-            />
-            <Input
-                type={'text'}
-                className={classNames(cls.input)}
-                onChange={onChangePassword}
-                value={password}
-            />
-            <Button
-                theme={ButtonTheme.OUTLINE_SECONDARY}
-                className={classNames(cls.loginBtn)}
-                onClick={onLoginClick}
-                disabled={isLoading}
-            >
-                {t('Войти')}
-            </Button>
-        </div>
+                <Input
+                    type={'text'}
+                    className={classNames(cls.input)}
+                    autoFocus={true}
+                    onChange={onChangeUsername}
+                    value={username}
+                />
+                <Input
+                    type={'text'}
+                    className={classNames(cls.input)}
+                    onChange={onChangePassword}
+                    value={password}
+                />
+                <Button
+                    theme={ButtonTheme.OUTLINE_SECONDARY}
+                    className={classNames(cls.loginBtn)}
+                    onClick={onLoginClick}
+                    disabled={isLoading}
+                >
+                    {t('Войти')}
+                </Button>
+            </div>
+        </DynamicModuleLoader>
     )
 })
 

@@ -14,9 +14,10 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, {rej
         try {
             const response = await axios.post<User>('http://localhost:8000/login', authData)
             // TODO: разобраться с ошибкой
-            // if (!response.data) {
-            //     throw new Error()
-            // }
+            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+            if (!response.data) {
+                throw new Error()
+            }
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
             thunkAPI.dispatch(userActions.setAuthData(response.data))
             return response.data

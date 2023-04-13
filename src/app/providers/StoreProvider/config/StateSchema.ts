@@ -13,9 +13,7 @@ export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
 
-    /**
-     * Асинхронные редюсеры
-     */
+    // Асинхронные редюсеры
     loginForm?: LoginSchema
 }
 export type StateSchemaKey = keyof StateSchema

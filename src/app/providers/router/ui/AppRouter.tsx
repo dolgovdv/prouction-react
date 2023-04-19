@@ -5,6 +5,7 @@ import {MainPage} from 'pages/MainPage'
 import {AboutPage} from 'pages/AboutPage'
 import {NotFoundPage} from 'pages/NotFoundPage'
 import {PageLoader} from 'shared/ui/PageLoader/PageLoader'
+import {ProfilePage} from 'pages/ProfilePage'
 
 export const routeConfig: RouteProps[] = [
     {
@@ -14,6 +15,10 @@ export const routeConfig: RouteProps[] = [
     {
         path: AppRoutes.ABOUT,
         element: <AboutPage />,
+    },
+    {
+        path: AppRoutes.PROFILE,
+        element: <ProfilePage />,
     },
     {
         path: AppRoutes.NOT_FOUND,

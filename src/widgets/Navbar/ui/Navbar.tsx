@@ -1,7 +1,7 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Navbar.module.scss'
 // import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink'
-import {type FC, useCallback, useState} from 'react'
+import {type FC, memo, useCallback, useState} from 'react'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {LoginModal} from 'features/AuthByUsername'
@@ -14,7 +14,8 @@ interface NavbarProps {
     className?: string
 }
 
-export const Navbar: FC<NavbarProps> = ({className = ''}) => {
+// eslint-disable-next-line react/prop-types
+export const Navbar: FC<NavbarProps> = memo(({className = ''}) => {
     const {t} = useTranslation()
     const dispatch = useDispatch()
     const authData = useSelector(getUserAuthData)
@@ -51,4 +52,6 @@ export const Navbar: FC<NavbarProps> = ({className = ''}) => {
             <LoginModal isOpen={isAuthModal} onClose={onCloseModal} lazy={true} />
         </div>
     )
-}
+})
+
+Navbar.displayName = 'Navbar'

@@ -8,11 +8,12 @@ import {
     type ReducersMapObject,
 } from '@reduxjs/toolkit'
 import {type CombinedState} from 'redux'
+import {type ProfileSchema} from 'entities/Profile'
 
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
-
+    profile: ProfileSchema
     // Асинхронные редюсеры
     loginForm?: LoginSchema
 }

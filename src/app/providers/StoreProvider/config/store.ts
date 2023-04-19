@@ -3,6 +3,7 @@ import {type StateSchema} from './StateSchema'
 import {counterReducer} from 'entities/Counter'
 import {userReducer} from 'entities/User'
 import {createReducerManager} from 'app/providers/StoreProvider/config/reducerManager'
+import {profileReducer} from 'entities/Profile'
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -12,6 +13,7 @@ export function createReduxStore(
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
+        profile: profileReducer,
     }
     const reducerManager = createReducerManager(rootReducers)
     const store = configureStore<StateSchema>({

@@ -4,7 +4,7 @@ import {memo, useCallback} from 'react'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input'
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {loginActions, loginReducer} from '../../model/slice/loginSlice'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {Text} from 'shared/ui/Text'
@@ -17,7 +17,6 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader'
-import {useAppDispatch} from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 
 const initialReducers: ReducersList = {loginForm: loginReducer}
 
@@ -29,8 +28,8 @@ interface LoginFormProps {
 export const LoginForm = memo((props: LoginFormProps) => {
     const {t} = useTranslation(['error'])
 
-    const {className = '', onSuccess} = props
-    const dispatch = useAppDispatch()
+    const {className = ''} = props
+    const dispatch = useDispatch()
     const username = useSelector(getLoginUsername)
     const error = useSelector(getLoginError)
     const password = useSelector(getLoginPassword)
@@ -53,15 +52,13 @@ export const LoginForm = memo((props: LoginFormProps) => {
         // eslint-disable-next-line @typescript-eslint/await-thenable
         const result = dispatch(
             // TODO
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
             loginByUsername({username, password})
         )
         console.log(result)
-        if (result.meta.requestStatus === 'fulfilled') {
-            onSuccess()
-        }
-    }, [dispatch, onSuccess, password, username])
+        // if (result?.meta?.requestStatus === 'fulfilled') {
+        //     onSuccess()
+        // }
+    }, [dispatch, password, username])
 
     /**
      * Действия при ошибке

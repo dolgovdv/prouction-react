@@ -1,4 +1,4 @@
-import {ProfilePage} from 'pages/ProfilePage'
+import {ProfilePage} from './ProfilePage'
 import {type ComponentMeta, type ComponentStory} from '@storybook/react'
 import {StoreDecorator} from 'shared/config/storybook/StoreDecorator/StoreDecorator'
 

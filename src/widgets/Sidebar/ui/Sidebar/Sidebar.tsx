@@ -1,51 +1,36 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
-import {type FC, useState} from 'react'
+import {type FC, memo, useMemo, useState} from 'react'
 import {ThemeSwitcher} from 'widgets/ThemeSwitcher'
 import {LangSwitcher} from 'widgets/LangSwitcher'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
-import {AppLink, AppLinkTheme} from 'shared/ui/AppLink/AppLink'
-import {useTranslation} from 'react-i18next'
-import MainIcon from 'shared/assets/icons/main.svg'
-import AboutIcon from 'shared/assets/icons/about.svg'
+import {SidebarItemsList} from 'widgets/Sidebar/model/items'
+import {SidebarItem} from '../SidebarItem/SidebarItem'
+import PropTypes from 'prop-types'
 
 interface SidebarProps {
     className?: string
 }
 
-export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
-    const {t} = useTranslation()
+export const Sidebar: FC<SidebarProps> = memo(({className = ''}) => {
     const [collapsed, setCollapsed] = useState<boolean>(false)
     const onToggle = (): void => {
         setCollapsed((prevState) => !prevState)
     }
+
+    const itemList = useMemo(
+        () =>
+            SidebarItemsList.map((item) => {
+                return <SidebarItem key={item.path} item={item} collapsed={collapsed} />
+            }),
+        [collapsed]
+    )
     return (
         <div
             data-testid='sidebar'
             className={classNames(cls.sidebar, {[cls.collapsed]: collapsed}, [className])}
         >
-            <div className={cls.items}>
-                <AppLink to={'/'} className={cls.item}>
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.link}>{t('Main')}</span>
-                </AppLink>
-
-                <AppLink to={'/about'} theme={AppLinkTheme.OUTLINE_SECONDARY} className={cls.item}>
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.link}>{t('About')}</span>
-                </AppLink>
-
-                {/* <div className={cls.item}> */}
-                {/*    <AboutIcon className={cls.icon} /> */}
-                {/*    <AppLink */}
-                {/*        theme={AppLinkTheme.OUTLINE_SECONDARY} */}
-                {/*        to={'/about'} */}
-                {/*        className={cls.link} */}
-                {/*    > */}
-                {/*        {t('About')} */}
-                {/*    </AppLink> */}
-                {/* </div> */}
-            </div>
+            <div className={cls.items}>{itemList}</div>
             <Button
                 data-testid='sidebar-toggle'
                 type='button'
@@ -63,4 +48,7 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
             </div>
         </div>
     )
-}
+})
+
+Sidebar.displayName = 'Sidebar'
+Sidebar.propTypes = {className: PropTypes.string}

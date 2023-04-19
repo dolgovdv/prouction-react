@@ -35,21 +35,6 @@
     flex-direction: column;
 }
 
-.item {
-    margin-top: 1rem;
-    display: flex;
-    align-items: center;
-}
-
-.link {
-    margin-left: 1rem;
-    opacity: 1;
-}
-
-.icon {
-    fill: var(--color-secondary);
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
 

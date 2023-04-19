@@ -14,7 +14,7 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "npx jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test",
-    "test:ui:approve": "npx loki approve",
+    "test:ui:ok": "npx loki update",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",

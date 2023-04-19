@@ -1,5 +1,5 @@
 import {classNames} from 'shared/lib/classNames/classNames'
-import cls from './ProfilePage.module.scss'
+// import cls from './ProfilePage.module.scss'
 import {useTranslation} from 'react-i18next'
 import {
     DynamicModuleLoader,
@@ -17,9 +17,7 @@ export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
     const {t} = useTranslation(['profile'])
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.profilepage, {}, [className])}>
-                {t('profile:Профиль')}
-            </div>
+            <div className={classNames('', {}, [className])}>{t('profile:Профиль')}</div>
         </DynamicModuleLoader>
     )
 }

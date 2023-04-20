@@ -1,11 +1,12 @@
 import {classNames} from 'shared/lib/classNames/classNames'
 // import cls from './ProfilePage.module.scss'
-import {useTranslation} from 'react-i18next'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader'
-import {profileReducer} from 'entities/Profile'
+import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile'
+import {useDispatch} from 'react-redux'
+import {useEffect} from 'react'
 
 const reducers: ReducersList = {profile: profileReducer}
 interface ProfilePageProps {
@@ -14,10 +15,17 @@ interface ProfilePageProps {
 
 export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
     const {className = ''} = props
-    const {t} = useTranslation(['profile'])
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchProfileData())
+    }, [dispatch])
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames('', {}, [className])}>{t('profile:Профиль')}</div>
+            <div className={classNames('', {}, [className])}>
+                <ProfileCard />
+            </div>
         </DynamicModuleLoader>
     )
 }

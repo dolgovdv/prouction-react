@@ -9,19 +9,15 @@ export function useTheme(): UseThemeResult {
     const {theme, setTheme} = useContext<ThemeContextProps>(ThemeContext)
 
     const toggleTheme = (): void => {
-        if (setTheme != null) {
-            setTheme((prevState: Theme) => {
-                const newTheme = prevState === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
-                /**
-                 * передаем тему сразу в body.
-                 * применяется для всех компонентов,
-                 * но не работает анимация перехода
-                 */
-                // document.body.className = newTheme
-                localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
-                return newTheme
-            })
-        }
+        const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT
+        setTheme?.(newTheme)
+        /**
+         * передаем тему сразу в body.
+         * применяется для всех компонентов,
+         * но не работает анимация перехода
+         */
+        // document.body.className = newTheme
+        localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme)
     }
 
     return {theme, toggleTheme}

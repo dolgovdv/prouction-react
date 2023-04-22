@@ -30,8 +30,8 @@ export const Modal: FC<ModalProps> = ({
         if (onClose != null) {
             setIsClosing(true)
             timerRef.current = setTimeout(() => {
-                setIsClosing(false)
                 onClose()
+                setIsClosing(false)
             }, ANIMATION_DELAY)
         }
     }, [onClose])

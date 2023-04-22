@@ -1,12 +1,11 @@
 import {classNames} from 'shared/lib/classNames/classNames'
-// import cls from './ProfilePage.module.scss'
 import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader'
 import {fetchProfileData, ProfileCard, profileReducer} from 'entities/Profile'
-import {useDispatch} from 'react-redux'
 import {useEffect} from 'react'
+import {useAppDispatch} from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 
 const reducers: ReducersList = {profile: profileReducer}
 interface ProfilePageProps {
@@ -15,7 +14,7 @@ interface ProfilePageProps {
 
 export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
     const {className = ''} = props
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
         dispatch(fetchProfileData())

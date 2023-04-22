@@ -15,9 +15,9 @@ import {type NavigateOptions, type To} from 'react-router'
 export interface StateSchema {
     counter: CounterSchema
     user: UserSchema
-    profile: ProfileSchema
     // Асинхронные редюсеры
     loginForm?: LoginSchema
+    profile?: ProfileSchema
 }
 export type StateSchemaKey = keyof StateSchema
 
@@ -34,7 +34,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance
-    navigate: (to: To, options?: NavigateOptions) => void
+    navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {

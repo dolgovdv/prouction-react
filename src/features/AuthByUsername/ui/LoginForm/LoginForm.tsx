@@ -4,7 +4,7 @@ import {memo, useCallback} from 'react'
 import {Button, ButtonTheme} from 'shared/ui/Button/Button'
 import {useTranslation} from 'react-i18next'
 import {Input} from 'shared/ui/Input'
-import {useDispatch, useSelector} from 'react-redux'
+import {useSelector} from 'react-redux'
 import {loginActions, loginReducer} from '../../model/slice/loginSlice'
 import {loginByUsername} from '../../model/services/loginByUsername/loginByUsername'
 import {Text} from 'shared/ui/Text'
@@ -17,6 +17,7 @@ import {
     DynamicModuleLoader,
     type ReducersList,
 } from 'shared/lib/components/DinamicModuleLoader/DynamicModuleLoader'
+import {useAppDispatch} from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 
 const initialReducers: ReducersList = {loginForm: loginReducer}
 
@@ -28,8 +29,8 @@ interface LoginFormProps {
 export const LoginForm = memo((props: LoginFormProps) => {
     const {t} = useTranslation(['error'])
 
-    const {className = ''} = props
-    const dispatch = useDispatch()
+    const {className = '', onSuccess} = props
+    const dispatch = useAppDispatch()
     const username = useSelector(getLoginUsername)
     const error = useSelector(getLoginError)
     const password = useSelector(getLoginPassword)
@@ -48,17 +49,17 @@ export const LoginForm = memo((props: LoginFormProps) => {
         [dispatch]
     )
 
+    // TODO: должна быть async функция
     const onLoginClick = useCallback(() => {
         // eslint-disable-next-line @typescript-eslint/await-thenable
-        const result = dispatch(
-            // TODO
-            loginByUsername({username, password})
-        )
+        const result = Promise.resolve(dispatch(loginByUsername({username, password})))
         console.log(result)
-        // if (result?.meta?.requestStatus === 'fulfilled') {
-        //     onSuccess()
-        // }
-    }, [dispatch, password, username])
+        void result.then((data) => {
+            if (data.meta.requestStatus === 'fulfilled') {
+                onSuccess()
+            }
+        })
+    }, [dispatch, onSuccess, password, username])
 
     /**
      * Действия при ошибке
@@ -88,9 +89,9 @@ export const LoginForm = memo((props: LoginFormProps) => {
                     value={password}
                 />
                 <Button
+                    onClick={onLoginClick}
                     theme={ButtonTheme.OUTLINE_SECONDARY}
                     className={classNames(cls.loginBtn)}
-                    onClick={onLoginClick}
                     disabled={isLoading}
                 >
                     {t('Войти')}

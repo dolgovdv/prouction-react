@@ -18,13 +18,12 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
             const response = await extra.api.post<User>('/login', authData)
 
             // TODO: разобраться с ошибкой
-            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-            if (!response.data) {
+            if (response.data == null) {
                 throw new Error()
             }
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data))
             dispatch(userActions.setAuthData(response.data))
-            extra.navigate('/profile')
+            // extra.navigate('/profile')
             return response.data
         } catch (e) {
             // TODO: автоматическти сохраняемый перевод попадает в неправильную папку

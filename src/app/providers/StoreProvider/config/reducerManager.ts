@@ -20,10 +20,10 @@ export function createReducerManager(
     let keysToRemove: StateSchemaKey[] = []
 
     return {
+        // TODO:unused
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-expect-error
         getReducerMap: () => reducers,
-
         reduce: (state: StateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = {...state}
@@ -38,8 +38,7 @@ export function createReducerManager(
         },
 
         add: (key: StateSchemaKey, reducer: Reducer) => {
-            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-            if (!key || reducers[key]) {
+            if (key == null || reducers[key] != null) {
                 return
             }
 
@@ -48,8 +47,7 @@ export function createReducerManager(
         },
 
         remove: (key: StateSchemaKey) => {
-            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
-            if (!key || !reducers[key]) {
+            if (key == null || reducers[key] == null) {
                 return
             }
 

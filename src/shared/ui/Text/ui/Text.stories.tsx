@@ -3,6 +3,7 @@ import {type ComponentMeta, type ComponentStory} from '@storybook/react'
 import {ThemeDecorator} from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import {Theme} from 'app/providers/ThemeProvider'
 import {TextTheme} from 'shared/ui/Text/ui/Text'
+
 // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
     title: 'shared/Text',

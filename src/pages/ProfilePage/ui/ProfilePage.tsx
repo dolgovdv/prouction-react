@@ -17,7 +17,7 @@ export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dispatch(fetchProfileData())
+        void dispatch(fetchProfileData())
     }, [dispatch])
 
     return (

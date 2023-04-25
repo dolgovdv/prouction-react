@@ -28,6 +28,13 @@
     color: var(--color-secondary);
 }
 
+.outline-red {
+    border: 2px solid var(--error-light);
+    background: none;
+    outline: none;
+    color: var(--error-light);
+}
+
 .background {
     background: var(--bg-color-primary);
     color: var(--color-primary);

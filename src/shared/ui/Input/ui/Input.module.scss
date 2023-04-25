@@ -1,4 +1,8 @@
 .input {
     background-color: var(--bg-color-primary);
     color: var(--color-primary);
+
+    .read-only {
+        opacity: 0.7;
+    }
 }

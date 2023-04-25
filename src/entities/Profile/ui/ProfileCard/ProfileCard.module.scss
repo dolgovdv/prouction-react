@@ -3,10 +3,14 @@
     border: 2px solid var(--bg-color-secondary);
 }
 
-.header {
-    display: flex;
-}
 
 .data {
     margin-top: 2rem;
+}
+
+.loading,
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

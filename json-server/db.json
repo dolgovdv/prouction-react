@@ -26,13 +26,193 @@
     }
   ],
   "profile": {
-    "first": "Тимур",
-    "lastname": "Ульби",
-    "age": 22,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "admin",
-    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    "isLoading": false,
+    "readonly": false,
+    "data": {
+      "first": "Тимур",
+      "lastname": "Ульби",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "admin",
+      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+    },
+    "form": {
+      "isLoading": false,
+      "readonly": false,
+      "data": {
+        "first": "Тимур",
+        "lastname": "Ульби",
+        "age": 22,
+        "currency": "RUB",
+        "country": "Russia",
+        "city": "Moscow",
+        "username": "admin",
+        "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+      },
+      "form": {
+        "isLoading": false,
+        "readonly": false,
+        "data": {
+          "first": "Тимур",
+          "lastname": "Ульби",
+          "age": 22,
+          "currency": "RUB",
+          "country": "Russia",
+          "city": "Moscow",
+          "username": "admin",
+          "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+        },
+        "form": {
+          "isLoading": false,
+          "readonly": false,
+          "data": {
+            "first": "Тимур",
+            "lastname": "Ульби",
+            "age": 22,
+            "currency": "RUB",
+            "country": "Russia",
+            "city": "Moscow",
+            "username": "admin",
+            "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+          },
+          "form": {
+            "isLoading": false,
+            "readonly": false,
+            "data": {
+              "first": "Тимур",
+              "lastname": "Ульби",
+              "age": 22,
+              "currency": "RUB",
+              "country": "Russia",
+              "city": "Moscow",
+              "username": "admin",
+              "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+            },
+            "form": {
+              "isLoading": false,
+              "readonly": false,
+              "data": {
+                "first": "Тимур",
+                "lastname": "Ульби",
+                "age": 22,
+                "currency": "RUB",
+                "country": "Russia",
+                "city": "Moscow",
+                "username": "admin",
+                "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+              },
+              "form": {
+                "isLoading": false,
+                "readonly": false,
+                "data": {
+                  "first": "Тимур",
+                  "lastname": "Ульби",
+                  "age": 22,
+                  "currency": "RUB",
+                  "country": "Russia",
+                  "city": "Moscow",
+                  "username": "admin",
+                  "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                },
+                "form": {
+                  "isLoading": false,
+                  "readonly": false,
+                  "data": {
+                    "first": "Тимур",
+                    "lastname": "Ульби",
+                    "age": 22,
+                    "currency": "RUB",
+                    "country": "Russia",
+                    "city": "Moscow",
+                    "username": "admin",
+                    "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                  },
+                  "form": {
+                    "isLoading": false,
+                    "readonly": false,
+                    "data": {
+                      "first": "Тимур",
+                      "lastname": "Ульби",
+                      "age": 22,
+                      "currency": "RUB",
+                      "country": "Russia",
+                      "city": "Moscow",
+                      "username": "admin",
+                      "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                    },
+                    "form": {
+                      "isLoading": false,
+                      "readonly": false,
+                      "data": {
+                        "first": "Тимур",
+                        "lastname": "Ульби",
+                        "age": 22,
+                        "currency": "RUB",
+                        "country": "Russia",
+                        "city": "Moscow",
+                        "username": "admin",
+                        "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                      },
+                      "form": {
+                        "isLoading": false,
+                        "readonly": false,
+                        "data": {
+                          "first": "Тимур",
+                          "lastname": "Ульби",
+                          "age": 22,
+                          "currency": "RUB",
+                          "country": "Russia",
+                          "city": "Moscow",
+                          "username": "admin",
+                          "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                        },
+                        "form": {
+                          "isLoading": false,
+                          "readonly": false,
+                          "data": {
+                            "first": "Тимур",
+                            "lastname": "Ульби",
+                            "age": 22,
+                            "currency": "RUB",
+                            "country": "Russia",
+                            "city": "Moscow",
+                            "username": "admin",
+                            "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                          },
+                          "form": {
+                            "first": "Тимур",
+                            "lastname": "Ульби",
+                            "age": 22,
+                            "currency": "RUB",
+                            "country": "Russia",
+                            "city": "Moscow",
+                            "username": "admin",
+                            "avatar": "https://pic.rutubelist.ru/user/3b/27/3b2758ad5492a76b578f7ee072e4e894.jpg"
+                          },
+                          "first": "Тимур1"
+                        },
+                        "first": "Тимур12"
+                      },
+                      "first": "Тимур123"
+                    },
+                    "lastname": "Ульби1"
+                  },
+                  "lastname": "Ульби12"
+                },
+                "lastname": "Ульби123"
+              },
+              "age": 221
+            },
+            "age": 2212
+          },
+          "age": 22123
+        },
+        "city": "Moscow1"
+      },
+      "city": "Moscow12"
+    },
+    "city": "Moscow123"
   }
 }

@@ -22,7 +22,8 @@ export const profileSlice = createSlice({
             state.form = state.data
         },
         updateProfile: (state, action: PayloadAction<Profile>) => {
-            state.form = {...state, ...action.payload}
+            console.log('updateProfile', {...state}, action)
+            state.form = {...state.form, ...action.payload}
         },
     },
     extraReducers: (builder) => {
@@ -48,6 +49,7 @@ export const profileSlice = createSlice({
                 state.isLoading = true
             })
             .addCase(updateProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
+                console.log('updateProfileData', state, action)
                 state.isLoading = false
                 state.data = action.payload
                 state.form = action.payload

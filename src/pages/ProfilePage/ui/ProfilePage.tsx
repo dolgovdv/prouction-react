@@ -17,6 +17,9 @@ import {useCallback, useEffect} from 'react'
 import {useAppDispatch} from 'shared/lib/hook/useAppDispatch/useAppDispatch'
 import {useSelector} from 'react-redux'
 import {ProfilePageHeader} from 'pages/ProfilePage/ui/ProfilePageHeader/ProfilePageHeader'
+import {type Currency} from 'entities/Currency'
+
+import {type Country} from 'entities/Country'
 
 const reducers: ReducersList = {profile: profileReducer}
 interface ProfilePageProps {
@@ -62,6 +65,30 @@ export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
         },
         [dispatch]
     )
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({username: value ?? ''}))
+        },
+        [dispatch]
+    )
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({avatar: value ?? ''}))
+        },
+        [dispatch]
+    )
+    const onChangeCurrency = useCallback(
+        (currency: Currency) => {
+            dispatch(profileActions.updateProfile({currency}))
+        },
+        [dispatch]
+    )
+    const onChangeCountry = useCallback(
+        (country: Country) => {
+            dispatch(profileActions.updateProfile({country}))
+        },
+        [dispatch]
+    )
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -75,7 +102,11 @@ export const ProfilePage = (props: ProfilePageProps): JSX.Element => {
                     onChangeLastName={onChangeLastName}
                     onChangeCity={onChangeCity}
                     onChangeAge={onChangeAge}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
                     readOnly={readOnly}
+                    onChangeCountry={onChangeCountry}
                 />
             </div>
         </DynamicModuleLoader>

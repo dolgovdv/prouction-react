@@ -3,7 +3,6 @@
     border: 2px solid var(--bg-color-secondary);
 }
 
-
 .data {
     margin-top: 2rem;
 }
@@ -13,4 +12,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.editing {
+    border: 2px solid var(--color-primary);
 }

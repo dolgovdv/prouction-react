@@ -3,8 +3,3 @@ export enum Currency {
     'EUR' = 'EUR',
     'US' = 'US',
 }
-
-export enum Country {
-    Russia = 'Russia',
-    US = 'US',
-}

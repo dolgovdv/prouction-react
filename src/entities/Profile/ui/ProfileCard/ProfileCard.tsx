@@ -6,6 +6,11 @@ import {Input} from 'shared/ui/Input'
 import {type Profile} from '../../model/types/profile'
 import {Loader} from 'shared/ui/Loader/Loader'
 import {TextAlign, TextTheme} from 'shared/ui/Text/ui/Text'
+import {Avatar} from 'shared/ui/Avatar/Avatar'
+
+import {type Currency} from 'entities/Currency/model/types/currency'
+import {CurrencySelect} from 'entities/Currency'
+import {CountrySelect, type Country} from 'entities/Country'
 
 interface ProfileCardProps {
     children?: JSX.Element
@@ -17,6 +22,10 @@ interface ProfileCardProps {
     onChangeLastName?: (value?: string) => void
     onChangeCity?: (value?: string) => void
     onChangeAge?: (value?: string) => void
+    onChangeUsername?: (value?: string) => void
+    onChangeAvatar?: (value?: string) => void
+    onChangeCurrency: (currency: Currency) => void
+    onChangeCountry: (country: Country) => void
     readOnly?: boolean
 }
 
@@ -34,6 +43,10 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
         onChangeLastName,
         onChangeCity,
         onChangeAge,
+        onChangeUsername,
+        onChangeAvatar,
+        onChangeCountry,
+        onChangeCurrency,
         readOnly,
     } = props
 
@@ -59,9 +72,18 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
     }
 
     return (
-        <div className={classNames(cls.profilecard, {}, [className])}>
+        <div
+            className={classNames(cls.profilecard, {[cls.editing]: readOnly === false}, [
+                className,
+            ])}
+        >
             <div>
                 <div className={cls.data}>
+                    {data?.avatar != null && (
+                        <div className={cls.avatarWrapper}>
+                            <Avatar src={data.avatar} alt={''} />
+                        </div>
+                    )}
                     <Input
                         value={data?.first}
                         placeholder={t('Имя')}
@@ -85,6 +107,30 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
                         value={data?.city}
                         placeholder={t('Город')}
                         onChange={onChangeCity}
+                        readOnly={readOnly}
+                    />
+                    <Input
+                        value={data?.username}
+                        placeholder={t('Логин')}
+                        onChange={onChangeUsername}
+                        readOnly={readOnly}
+                    />
+
+                    <Input
+                        value={data?.avatar}
+                        placeholder={t('Аватар')}
+                        onChange={onChangeAvatar}
+                        readOnly={readOnly}
+                    />
+                    <CurrencySelect
+                        value={data?.currency}
+                        onChange={onChangeCurrency}
+                        readOnly={readOnly}
+                    />
+
+                    <CountrySelect
+                        value={data?.country}
+                        onChange={onChangeCountry}
                         readOnly={readOnly}
                     />
                 </div>

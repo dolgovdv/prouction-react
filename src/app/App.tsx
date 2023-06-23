@@ -5,13 +5,14 @@ import {AppRouter} from 'app/providers/router'
 import {Navbar} from 'widgets/Navbar'
 import {Sidebar} from 'widgets/Sidebar'
 import {type FC, Suspense, useEffect} from 'react'
-import {useDispatch} from 'react-redux'
-import {userActions} from 'entities/User'
+import {useDispatch, useSelector} from 'react-redux'
+import {getUserAuthData, getUserInited, userActions} from 'entities/User'
 
 export const App: FC = () => {
     const {theme = Theme.LIGHT} = useTheme()
     const dispatch = useDispatch()
-
+    const auth = useSelector(getUserAuthData)
+    const inited = useSelector(getUserInited)
     useEffect(() => {
         dispatch(userActions.initAuthData())
     }, [dispatch])
@@ -21,8 +22,8 @@ export const App: FC = () => {
             <Suspense fallback={''}>
                 <Navbar />
                 <div className='content-page'>
-                    <Sidebar />
-                    <AppRouter />
+                    {auth != null && <Sidebar />}
+                    {inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>

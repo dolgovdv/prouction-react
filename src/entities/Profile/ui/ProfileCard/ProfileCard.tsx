@@ -87,6 +87,7 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
                     <Input
                         value={data?.first}
                         placeholder={t('Имя')}
+                        label={t('Имя')}
                         onChange={onChangeFirstName}
                         readOnly={readOnly}
                     />
@@ -102,6 +103,7 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
                         onChange={onChangeAge}
                         readOnly={readOnly}
                         type={'number'}
+                        label={t('Возраст')}
                     />
                     <Input
                         value={data?.city}

@@ -27,11 +27,11 @@
   ],
   "profile": {
     "first": "Тимур",
-    "lastname": "Ульби",
-    "age": 23,
+    "lastname": "Улби",
+    "age": 0,
     "currency": "RUB",
     "country": "Russia",
-    "city": "Moscow",
+    "city": "Москва",
     "username": "admin",
     "avatar": "https://static.riafan.ru/upload/images/2022/7/2/825256_full.webp"
   }

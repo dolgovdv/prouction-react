@@ -11,3 +11,4 @@ export {getProfileForm} from '../Profile/model/selectors/getProfileForm/getProfi
 export {getProfileError} from '../Profile/model/selectors/getProfilesError/getProfileError'
 export {getProfileIsLoading} from '../Profile/model/selectors/getProfileIsLoading/getProfileIsLoading'
 export {getProfileReadonly} from '../Profile/model/selectors/getProfileReadonly/getProfileReadonly'
+export {getProfileValidateErrors} from '../Profile/model/selectors/getProfileValidateErrors/getProfileValidateErrors'

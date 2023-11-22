@@ -43,7 +43,7 @@ export default {
     },
 
     // A set of global variables that need to be available in all test environments
-    globals: {__IS_DEV__: true, __API__: ''},
+    globals: {__IS_DEV__: true, __API__: '', __PROJECT__: 'jest'},
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,

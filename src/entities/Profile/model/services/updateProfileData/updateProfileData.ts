@@ -27,6 +27,11 @@ export const updateProfileData = createAsyncThunk<
 
     try {
         const response = await extra.api.put<Profile>('/profile', formData)
+
+        // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+        if (!response.data) {
+            throw new Error()
+        }
         return response.data
     } catch (e) {
         // TODO: автоматическти сохраняемый перевод попадает в неправильную папку

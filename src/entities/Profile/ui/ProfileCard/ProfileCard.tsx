@@ -7,7 +7,6 @@ import {type Profile} from '../../model/types/profile'
 import {Loader} from 'shared/ui/Loader/Loader'
 import {TextAlign, TextTheme} from 'shared/ui/Text/ui/Text'
 import {Avatar} from 'shared/ui/Avatar/Avatar'
-
 import {type Currency} from 'entities/Currency/model/types/currency'
 import {CurrencySelect} from 'entities/Currency'
 import {CountrySelect, type Country} from 'entities/Country'
@@ -58,7 +57,7 @@ export const ProfileCard = (props: ProfileCardProps): JSX.Element => {
         )
     }
 
-    if (error !== '') {
+    if (error != null) {
         return (
             <div className={classNames(cls.profilecard, {}, [className, cls.error])}>
                 <Text

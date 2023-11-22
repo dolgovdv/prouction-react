@@ -6,9 +6,9 @@ export const validateProfileData = (profile?: Profile): ValidateProfileError[] =
         return [ValidateProfileError.NOT_DATA]
     }
     const {age, username, first, lastname} = profile
-    console.log(profile)
     const errors: ValidateProfileError[] = []
-    if (first === '' || lastname === '') {
+
+    if (first == null || lastname == null) {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA)
     }
 
@@ -16,7 +16,7 @@ export const validateProfileData = (profile?: Profile): ValidateProfileError[] =
         errors.push(ValidateProfileError.INCORRECT_AGE)
     }
 
-    if (username === '') {
+    if (username == null) {
         errors.push(ValidateProfileError.INCORRECT_USERNAME)
     }
     return errors

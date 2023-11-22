@@ -10,6 +10,10 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
         try {
             const response = await extra.api.get<Profile>('/profile')
 
+            // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+            if (!response.data) {
+                throw new Error()
+            }
             return response.data
         } catch (e) {
             // TODO: автоматическти сохраняемый перевод попадает в неправильную папку

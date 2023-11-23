@@ -9,6 +9,6 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         /**
          * [webpack-dev-server] "hot: true" automatically applies HMR plugin, you don't have to add it manually to your webpack configuration.
          */
-        // hot: true
+        hot: true,
     }
 }

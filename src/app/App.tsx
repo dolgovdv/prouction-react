@@ -12,7 +12,7 @@ export const App: FC = () => {
     const {theme = Theme.LIGHT} = useTheme()
     const dispatch = useDispatch()
     const auth = useSelector(getUserAuthData)
-    const inited = useSelector(getUserInited)
+    const _inited = useSelector(getUserInited)
     useEffect(() => {
         dispatch(userActions.initAuthData())
     }, [dispatch])
@@ -23,7 +23,7 @@ export const App: FC = () => {
                 <Navbar />
                 <div className='content-page'>
                     {auth != null && <Sidebar />}
-                    {inited && <AppRouter />}
+                    {_inited && <AppRouter />}
                 </div>
             </Suspense>
         </div>
